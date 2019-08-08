@@ -1,0 +1,20 @@
+@model User
+
+<h1>Create Account</h1>
+<form asp-action="Create" asp-controller="Home" method="post">
+    <label asp-for="FirstName">First Name: </label>
+    <input asp-for="FirstName"><br>
+    <label asp-for="LastName">Last Name: </label>
+    <input asp-for="LastName"><br>
+    <label asp-for="BirthDate">Birthday: </label>
+    <input type="date" asp-for="BirthDate"><br>
+    <label asp-for="Age">Age: </label>
+    <input asp-for="Age"><br>
+    <label asp-for="Email">Email: </label>
+    <input asp-for="Email"><br>
+    <label asp-for="Password">Password: </label>
+    <input asp-for="Password"><br>
+    <label asp-for="ConfirmPassword">Confirm Password: </label>
+    <input asp-for="ConfirmPassword"><br>
+    <input class = "btn" value="REGISTER" type="submit">
+</form>

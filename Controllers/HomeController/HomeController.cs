@@ -14,15 +14,14 @@ namespace simpleLoginViewModel
         }
 
         [HttpPost("register")]
-        public IActionResult Create(IndexViewModel modelData)
+        public IActionResult Create(User newUser)
         {
             Console.Write("Is This Getting Here?");
-            User submittedInfo = modelData.newUser;
             if(ModelState.IsValid)
             {
                 Console.Write("###########It's Valid?#########");
                 // do somethng!  maybe insert into db?  then we will redirect
-                return RedirectToAction("Success");
+                return RedirectToAction("Success", newUser);
             }
             else
             {
@@ -33,15 +32,14 @@ namespace simpleLoginViewModel
         }
 
         [HttpPost("login")]
-        public IActionResult LoginUser(IndexViewModel modelData)
+        public IActionResult LoginUser(Login newLogin)
         {
             Console.Write("Is This Getting Here?");
-            Login submittedInfo = modelData.newLogin;
             if(ModelState.IsValid)
             {
                 Console.Write("###########It's Valid?#########");
                 // do somethng!  maybe insert into db?  then we will redirect
-                return RedirectToAction("Success");
+                return RedirectToAction("Success", newLogin);
             }
             else
             {
